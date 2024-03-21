@@ -12,8 +12,8 @@ async function main() {
         await prisma.product.createMany({
             data: products
         })
-    } catch (error) {
-        console.error(error)
+    } catch (e) {
+        console.error(e)
     }
 }
 
