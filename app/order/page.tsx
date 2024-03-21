@@ -3,7 +3,8 @@ export default function OrderPage() {
 
     return (
         <>
-        OrderPage
+        Página de órdenes
+        {crypto.randomUUID()}
         </>
     )
 }
