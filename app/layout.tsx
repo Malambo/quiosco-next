@@ -9,13 +9,9 @@ export const metadata: Metadata = {
   description: "Aprendiendo a crear una app con Next.js App Router y Prisma",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${inter.className} bg-slate-100`}>{children}</body>
     </html>
   );
