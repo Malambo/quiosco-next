@@ -9,6 +9,7 @@ export default function ToastNotification() {
     return (
         <ToastContainer
         transition={Slide}
+        theme = "dark"
         hideProgressBar={true}
         autoClose={3000}
         />

@@ -10,7 +10,7 @@ import {OrderSchema}    from "@/src/schema"
 
 export default function OrderSummary() {
 
-    const order = useStore(state => state.order)
+    const {order, clearOrder} = useStore()
     const total = useMemo(() => order.reduce((total, item) => total + (item.quantity * item.price), 0), [order])
 
     const handleCreateOrder = async (formData: FormData) => {
@@ -24,25 +24,30 @@ export default function OrderSummary() {
         const result = OrderSchema.safeParse(data)
         if(!result.success) {
             result.error.issues.map(issue => {
-                toast.error(issue.message)
+                toast.warn(issue.message)
             })
-            // Si no pasa la validación del cliente
-            // no llega al servidor.
+            /**Si no pasa la validación del cliente
+             * no llega al servidor.*/
             return
         }
         
-        // Vínculo al servidor
+        // Vínculo a la validación en el servidor
         const response = await createOrder(data)
         if(response?.errors) {
             response.errors.map(issue => {
                 toast.error(issue.message)
             })
         }
+
+        /**Acá ya no hay errores de validación
+         * ni en el cliente ni en el servidor.*/
+        toast.success('Pedido realizado correctamente')
+        clearOrder()
     }
 
     return (
         <aside className='lg:h-screen lg:overflow-y-scroll lg:w-96 md:w-64 p-5'>
-            <h1 className='text-4xl text-center font-black'>Mi pedido</h1>
+            <h1 className='m-10 text-4xl text-center font-black'>Mi pedido</h1>
 
             {order.length === 0
             ? <p className='text-center my-10'>
