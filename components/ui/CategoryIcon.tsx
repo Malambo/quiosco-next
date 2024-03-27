@@ -7,7 +7,6 @@ import {Category} from "@prisma/client"
 
 interface CategoryIconProps {
     category: Category
-    params: string
 }
 
 
