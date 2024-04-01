@@ -9,7 +9,7 @@ export default function OrderCard({order}: OrderCardProps) {
 
     return (
         <section
-            aria-labelledby="summary-heading"
+            // aria-labelledby="summary-heading"
             className="mt-16 rounded-lg bg-slate-50 px-4 py-6 sm:p-6  lg:mt-0 lg:p-8 space-y-4"
         >
             <p className='text-2xl font-bold text-slate-900'>Pedido de {order.name}</p>

@@ -1,8 +1,7 @@
 'use server'
 
 import {prisma} from "@/src/lib/prisma"
-import {OrderSchema} from "@/src/schema"    // OrderSchema es un objeto ZOD.
-import { revalidatePath } from "next/cache"
+import {revalidatePath} from "next/cache"
 
 
 export async function completeOrder(formData: FormData) {
@@ -15,7 +14,7 @@ export async function completeOrder(formData: FormData) {
             },
             data: {
                 status: true,
-                orderReadyAt: new Date(Date.now())
+                orderReadyAt: new Date()
             }
         })
         revalidatePath('/admin/orders')

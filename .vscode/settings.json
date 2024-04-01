@@ -1,4 +1,7 @@
 {
     "WillLuke.nextjs.addTypesOnSave": true,
-    "WillLuke.nextjs.hasPrompted": true
+    "WillLuke.nextjs.hasPrompted": true,
+    "CodeGPT.apiKey": "Nvidia",
+    "CodeGPT.Autocomplete.enabled": true,
+    "CodeGPT.Autocomplete.provider": "CodeGPT Plus - Plus"
 }
