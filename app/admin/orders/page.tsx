@@ -27,7 +27,7 @@ export default async function OrdersPage() {
         <>
         <Heading texto='Administrar órdenes'/>
         {orders.length ? (
-            <div className='grid lg: grid-cols-2 2xl:grid-cols-3 gap-5 mt-5'>
+            <div className='grid grid-cols-2 2xl:grid-cols-4 gap-5 mt-5'>
                 {orders.map(order => (
                     <OrderCard
                     key={order.id}

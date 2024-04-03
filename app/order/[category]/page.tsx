@@ -22,10 +22,7 @@ export default async function OrderPage({params}: {params: {category: string}}) 
         <>
         <Heading texto='Elige y personaliza tu pedido a continuación'/>
         <div className='
-        mx-auto
-        grid grid-cols-1
-        2xl:grid-cols-3
-        gap-4 items-start
+        grid grid-cols-2 2xl:grid-cols-4 gap-5 mt-5
         '>
             {products.map(product => (
                 <ProductCard

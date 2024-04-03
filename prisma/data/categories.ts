@@ -22,5 +22,9 @@ export const categories = [
       {
         slug: "galletas",
         name: "Galletas"
+      },
+      {
+        slug: "jugos",
+        name: "Jugos"
       }
 ]
