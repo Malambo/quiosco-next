@@ -1,5 +1,5 @@
 import Link from "next/link"
-import {formatCurrency} from "@/src/lib/utils"
+import {formatCurrency} from "@/src/utils"
 import {ProductsWithCategory} from "@/app/admin/products/page"
 
 

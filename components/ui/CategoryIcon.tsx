@@ -23,7 +23,7 @@ export default function CategoryIcon({category}: CategoryIconProps) {
         last-of-type:border-b
         ${category.slug === params.category ? 'bg-amber-500 hover:bg-amber-500' : 'hover:bg-amber-200'}`}
         >
-            {/* Image (fill) => relativa al div padre */}
+            {/* Image -> fill => relativa al div padre */}
             <div className='w-16 h-16 relative'>
                 <Image
                 alt={`icono de ${category.name}`}

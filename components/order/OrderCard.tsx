@@ -1,5 +1,5 @@
 import {OrderWithProducts} from "@/src/types"
-import {formatCurrency} from '@/src/lib/utils'
+import {formatCurrency} from '@/src/utils'
 import {completeOrder} from "@/actions/complete-order-action"
 
 interface OrderCardProps {

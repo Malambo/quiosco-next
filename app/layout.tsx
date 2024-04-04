@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="es">
-      <body className={`${inter.className} bg-slate-100`}>{children}</body>
+      <body className={`${inter.className} bg-gradient-to-br to-teal-200 from-yellow-200
+      `}>{children}</body>
     </html>
   );
 }

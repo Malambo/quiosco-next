@@ -4,7 +4,7 @@ import {useMemo}        from "react"
 import {toast}          from "react-toastify"
 import {useStore}       from "@/src/store"
 import ProductDetails   from "./ProductDetails"
-import {formatCurrency} from "@/src/lib/utils"
+import {formatCurrency} from "@/src/utils"
 import {createOrder}    from "@/actions/create-order-action"
 import {OrderSchema}    from "@/src/schema"
 
@@ -73,7 +73,7 @@ export default function OrderSummary() {
                         <input
                         type="text"
                         placeholder='Tu nombre'
-                        className='w-full p-2 bg-white border border-gray-100'
+                        className='w-full p-2 bg-white border border-slate-100'
                         name='nombre'
                         />
 
