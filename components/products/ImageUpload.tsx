@@ -4,9 +4,10 @@ import {useState} from 'react'
 import Image from 'next/image'
 import {CldUploadWidget} from 'next-cloudinary'
 import {TbPhotoPlus} from 'react-icons/tb'
+import {getImagePath} from '@/src/utils'
 
 
-export default function ImageUpload() {
+export default function ImageUpload({image}: {image: string | undefined}) {
 
     const [imageUrl, setImageUrl] = useState('')
 
@@ -26,7 +27,7 @@ export default function ImageUpload() {
         >
             {({open}) => (
                 <>
-                <div className='space-y-2'>
+                <div className='space-y-2 text-sm'>
                     <label >Imagen del producto</label>
 
                     <div
@@ -36,17 +37,30 @@ export default function ImageUpload() {
                         <TbPhotoPlus
                         size={50}
                         />
-                        <p className='text-lg font-semibold'>Agregar imagen</p>
+                        <p className='text-lg font-semibold'>{image ? 'Cambiar la ' : 'Agregar una '} imagen
+                        </p>
+
+                        {image && !imageUrl && (
+                            <div className='space-y-2'>
+                                <div className='relative w-64 h-64'>
+                                    <Image
+                                    fill
+                                    src={getImagePath(image)}
+                                    alt='imagen producto'
+                                    />
+                                </div>
+                            </div>
+                        )}
 
                         {imageUrl && (
                             <div
                             className='absolute inset-0 w-full h-full'
                             >
                                 <Image
-                                    fill
-                                    style={{objectFit: 'contain'}}
-                                    src={imageUrl}
-                                    alt='Imagen de producto'
+                                fill
+                                style={{objectFit: 'contain'}}
+                                src={imageUrl}
+                                alt='Imagen de producto'
                                 />
                             </div>
                         )}
@@ -56,7 +70,7 @@ export default function ImageUpload() {
                 <input
                 type='hidden'
                 name='image'
-                value={imageUrl}
+                defaultValue={imageUrl? imageUrl : image}
                 />
                 </>
             )}
