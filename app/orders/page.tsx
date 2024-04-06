@@ -49,7 +49,7 @@ export default async function OrdersPage() {
         </form>
 
         {orders.length ? (
-            <div className='grid grid-cols-3 gap-5 max-w-5xl mx-auto mt-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 max-w-5xl mx-auto mt-10'>
                 {orders.map(order => (
                     <LatestOrderItem
                     key={order.id}
