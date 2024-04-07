@@ -24,7 +24,7 @@ export default function CategoryIcon({category}: CategoryIconProps) {
         ${category.slug === params.category ? 'bg-amber-500 hover:bg-amber-500' : 'hover:bg-amber-200'}`}
         >
             {/* Image -> fill => relativa al div padre */}
-            <div className='w-16 h-16 relative'>
+            <div className='relative w-16 h-16'>
                 <Image
                 alt={`icono de ${category.name}`}
                 src={`/icon_${category.slug}.svg`}
